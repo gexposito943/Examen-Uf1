@@ -28,5 +28,34 @@ function mostrarProducte(producte) {
     }
 }
 
+//exercici 3:
+function mostrarProductes(productes) {
+    if (!Array.isArray(productes) || productes.length === 0) {
+        console.log('No hi ha productes');
+        return;
+    }
 
+    console.log('llista:');
+    
+    productes.forEach(producte => {
+        mostrarProducte(producte);
+    });
+}
+
+//exercici 4:
+function mostrarProducteID(productes, id) {
+    if (!Array.isArray(productes) || productes.length === 0) {
+        console.log('No hi ha productes');
+        return;
+    }
+
+    const producte = productes.find(p => p.id === id);
+    
+    if (!producte) {
+        console.log('No sha trobat cap producte amb lID: ' + id);
+        return;
+    }
+
+    mostrarProducte(producte);
+}
 
